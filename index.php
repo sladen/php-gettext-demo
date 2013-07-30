@@ -12,8 +12,10 @@ function showMessages() {
 }
 
 
-// unset $LANGUAGE, which overrides $LC_MESSAGES
+// unset $LANGUAGE and $LC_ALL, which override $LC_MESSAGES
+// and so prevent this demo working where these are set
 putenv('LANGUAGE');
+putenv('LC_ALL');
 //putenv('LC_MESSAGES=ja_JP.UTF-8');
 //setlocale(LC_MESSAGES, 'ja_JP.UTF-8');
 $textDomain = 'messages';
